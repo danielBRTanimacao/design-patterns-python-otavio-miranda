@@ -38,7 +38,8 @@ class Vehicle:
             print("Veiculo já esta desligado!")
 
     def maxVelocity(self) -> None:
-        print(f"Velocidade maxima {(self.horses / 60) * 25}")
+        division: float = (self.horses / 60) * 25
+        print(f"Velocidade maxima {division:.2f}Km/h")
 
     def makeSound() -> None:
         NotImplementedError("Implemente o metodo!")
@@ -60,4 +61,8 @@ class Bike(Vehicle):
         print("randaandandandan!")
 
 if __name__ == "__main__":
-    motocycle: Bike = Bike("Moto")
+    motocycle: Bike = Bike("Moto", "Harley", "Harley-Davidson", 400, 2)
+    car: Car = Car("Carro", "Supra", "Toyota", 550, 4, 2)
+
+    motocycle.maxVelocity()
+    car.maxVelocity()
